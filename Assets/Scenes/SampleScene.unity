@@ -1081,11 +1081,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38acf4c523640324cbd5b9dc0d057980, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  platform: {fileID: 501780704}
-  north: {fileID: 670181677}
-  south: {fileID: 1613582638}
-  east: {fileID: 1741514258}
-  west: {fileID: 1274275749}
 --- !u!1 &2128142085
 GameObject:
   m_ObjectHideFlags: 0
@@ -1098,7 +1093,8 @@ GameObject:
   - component: {fileID: 2128142088}
   - component: {fileID: 2128142087}
   - component: {fileID: 2128142086}
-  m_Layer: 0
+  - component: {fileID: 2128142090}
+  m_Layer: 2
   m_Name: MatchPlace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1124,10 +1120,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5000001
-  m_Height: 2
+  m_Radius: 1
+  m_Height: 10
   m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  m_Center: {x: 0.000000059604645, y: 8, z: -0.00000008940697}
 --- !u!23 &2128142087
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1196,6 +1192,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1804102611}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2128142090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128142085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d67ea38cc0f0aff468cb26243b27a376, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
