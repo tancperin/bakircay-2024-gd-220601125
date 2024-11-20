@@ -23,6 +23,9 @@ public class ItemMove : MonoBehaviour
                 {
                     holdItem.transform.position = new Vector3(hit.point.x, 5, hit.point.z);
                     Variables.Object(holdItem).Set("isHold", false);
+                    holdItem.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
+                    holdItem.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+                    holdItem.transform.rotation = Quaternion.identity;
                     holdItem = null;
                 }
                 else if (hit.transform.gameObject.tag == "Item")
@@ -31,6 +34,7 @@ public class ItemMove : MonoBehaviour
                     Variables.Object(holdItem).Set("isHold", true);
                     holdItem.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
                     holdItem.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+                    holdItem.transform.rotation = Quaternion.identity;
                 }
             }
 
