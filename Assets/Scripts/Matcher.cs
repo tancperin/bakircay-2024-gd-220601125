@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Matcher : MonoBehaviour
 {
+    GameObject item;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -16,20 +17,20 @@ public class Matcher : MonoBehaviour
     //OnTriggerEnter is called when the Collider other enters the trigger
     void OnTriggerEnter(Collider other)
     {
-        GameObject otherGameObject = other.gameObject;
-        if (otherGameObject.CompareTag("Item"))
+        if (item == null && other.gameObject.CompareTag("Item"))
         {
-            otherGameObject.GetComponent<Rigidbody>().isKinematic = true;
+            item = other.gameObject;
+            item.GetComponent<Rigidbody>().isKinematic = true;
         }
     }
 
     //OnTriggerExit is called when the Collider other has stopped touching the trigger
     void OnTriggerExit(Collider other)
     {
-        GameObject otherGameObject = other.gameObject;
-        if (otherGameObject.CompareTag("Item"))
+        if (item != null && other.gameObject.CompareTag("Item"))
         {
-            otherGameObject.GetComponent<Rigidbody>().isKinematic = false;
+            item.GetComponent<Rigidbody>().isKinematic = false;
+            item = null;
         }
     }
 }
