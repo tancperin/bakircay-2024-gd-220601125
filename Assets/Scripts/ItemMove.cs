@@ -29,6 +29,8 @@ public class ItemMove : MonoBehaviour
                 {
                     holdItem = hit.transform.gameObject;
                     Variables.Object(holdItem).Set("isHold", true);
+                    holdItem.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
+                    holdItem.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
                 }
             }
 
