@@ -657,7 +657,7 @@ MonoBehaviour:
   - {fileID: 5349152570355099929, guid: ed8e928698f69d54094c36d962d37161, type: 3}
   - {fileID: 4801313099163381417, guid: 55e35a693e3dc824dae2f1ece8d80104, type: 3}
   - {fileID: 5146028970110886048, guid: a7b08723d13d78242962f01254efa218, type: 3}
-  maxSpawn: 25
+  maxSpawn: 20
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
