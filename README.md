@@ -1,5 +1,7 @@
 # 3D Object Matching Game
 
+## [**WebGL Game Link**](https://tancperin.github.io/bakircay-2024-gd-220601125/)
+
 ## Table of Contents
 - [Introduction & Game Details](#introduction--game-details)
     - [Game Objects](#game-objects)
