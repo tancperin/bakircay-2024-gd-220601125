@@ -1,10 +1,16 @@
 # 3D Object Matching Game
 
 ## Table of Contents
-- [Introduction](#introduction)
-- [Gameplay](#gameplay)
-- [Features](#features)
-- [Future Work](#future-work)
+- [Introduction & Game Details](#introduction--game-details)
+    - [Game Objects](#game-objects)
+    - [Game Modes](#game-modes)
+    - [Game Mechanics](#game-mechanics)
+        - [Object Interaction](#object-interaction)
+        - [Golden Object](#golden-object)
+        - [Skills](#skills)
+    - [UI Elements](#ui-elements)
+        - [Main Menu](#main-menu)
+        - [Game Area](#game-area)
 
 ## Introduction & Game Details
 This is a 3D object matching game that is developed using Unity3D and C#. 
