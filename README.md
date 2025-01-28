@@ -82,22 +82,17 @@ In this mode, the player can play the game without any restrictions. The objects
 The player can interact with the objects by clicking on them. When the player clicks on an object, the object will be held on the cursor. The player can release the object by clicking again. If the player releases the object on a correct pair, the objects will be destroyed. If the player releases the object on an incorrect pair, the object will be thrown out.\
 ![Object Interaction](Images/ObjectInteraction.gif)
 
-#### Golden Object
-In the game, there is a golden object that can be spawned randomly with 10% chance. The golden object is a special object that can be matched with any object. If the player matches the golden object with another object, the player will get a advanced skill.\
-![Golden Object](Images/GoldenObject.gif)
-
 #### Skills
-There are 2 types of skills, total of 4 skills in the game:
-- **Basic Skill**: This skill allows player to shake the objects in the game area. The player can use this skill by pressing the `Shake` button. This skill can be used any time, but it has a cooldown time of 5 seconds.\
-![Basic Skill](Images/BasicSkill.gif)
+There are total of 4 skills in the game:
+- **Shake**: This skill allows player to shake the objects in the game area. The player can use this skill by pressing the `Shake` button. This skill can be used any time, but it has a cooldown time of 5 seconds.\
+![Basic Skill](Images/ShakeSkill.gif)
+- **Hint**: This skill shows a pair of objects by highlighting them. The player can use this skill by pressing the `Hint` button. This skill can be used any time, but it has a cooldown time of 5 seconds.\
+![Hint](Images/HintSkill.gif)\
+- **Double Points**: When this skill is used, all the objects starts moving and the player has to match them. Every correct pair will give the player double points. This skill can used any time, but it has a cooldown time of 5 seconds.\
+![Refresh](Images/DoublePointsSkill.gif)\
+- **All Same**: This skill makes all objects in the game area the same. This skill can be used any time, but it has a cooldown time of 5 seconds.\
+![All Same](Images/AllSameSkill.gif)
 
-- **Advanced Skills**: There are 3 advanced skills that can be obtained by matching the golden object with another object. These skills are:
-    - **Hint**: This skill shows a pair of objects by highlighting them. The player can use this skill by pressing the `Hint` button.\
-    ![Hint](Images/HintSkill.gif)\
-    - **Refresh**: This skill refreshes the game area by deleting all objects and spawning new ones. The player can use this skill by pressing the `Refresh` button.\
-    ![Refresh](Images/RefreshSkill.gif)\
-    - **All Same**: This skill makes all objects in the game area the same. This skill has 4% chance to be obtained. The player can use this skill by pressing the `All Same` button.\
-    ![All Same](Images/AllSameSkill.gif)
 
 ### UI Elements
 #### Main Menu
