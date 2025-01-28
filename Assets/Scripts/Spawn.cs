@@ -6,7 +6,6 @@ public class Spawn : MonoBehaviour
 {
     #region Variables
     #region Serialized
-    [SerializeField] private Material golden;
     #endregion
     #region Private
     private float timeBtwSpawn = .2f;
@@ -94,12 +93,6 @@ public class Spawn : MonoBehaviour
         bool isHold = false;
         Variables.Object(obj).Set("isHold", isHold);
         Variables.Object(obj).Set("isMathing", false);
-        int posibility = Random.Range(0, 100);
-        Variables.Object(obj).Set("isGolden", posibility < 10);
-        if (Variables.Object(obj).Get<bool>("isGolden")) 
-        {
-            obj.GetComponent<Renderer>().materials = new Material[] { golden };
-        }
     }
 
     public void RespwanItems(int count)

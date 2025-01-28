@@ -16,13 +16,8 @@ public class Matcher : MonoBehaviour
     public float sizeChangeSpeed = 1f;
     private Vector3 originalScale;
     private Vector3 maxScale, minScale;
-    private float way = 1f;
-    private int pointsForMatch = 10;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-
-    }
+    private float way = 1f, doublePointsTime = 0f;
+    private int pointsForMatch, originalPointsForMatch = 10;
 
     // Update is called once per frame
     void Update()
@@ -44,6 +39,15 @@ public class Matcher : MonoBehaviour
             }
         }
 
+        if (doublePointsTime > 0)
+        {
+            doublePointsTime -= Time.deltaTime;
+        }
+        if (doublePointsTime <= 0)
+        {
+            pointsForMatch = originalPointsForMatch;
+        }
+
     }
 
     //OnTriggerEnter is called when the Collider other enters the trigger
@@ -63,7 +67,6 @@ public class Matcher : MonoBehaviour
         }
         else if (item != null && other.gameObject.CompareTag("Item") && other.gameObject.name == item.name && other.gameObject != item)
         {
-            if (Variables.Object(item).Get<bool>("isGolden") || Variables.Object(other.gameObject).Get<bool>("isGolden")) bottomBar.SelectAdvancedSkill();
             Instantiate(MatchEffect, item.transform.position, Quaternion.identity);
             Destroy(item);
             Destroy(other.gameObject);
@@ -75,7 +78,7 @@ public class Matcher : MonoBehaviour
                 finishedPopup.SetActive(true);
             }
         }
-        else if (item != null && other.gameObject.CompareTag("Item") && other.gameObject.name != item.name)
+        else if (item != null && other.gameObject.CompareTag("Item") && other.gameObject.name != item.name && Variables.Object(other.gameObject).Get<bool>("isHold") == true)
         {
             Variables.Object(item).Set("isMathing", false);
             item.GetComponent<Rigidbody>().useGravity = true;
@@ -97,6 +100,15 @@ public class Matcher : MonoBehaviour
     //OnTriggerExit is called when the Collider other has stopped touching the trigger
     void OnTriggerExit(Collider other)
     {
+        // if (item != null && other.gameObject.CompareTag("Item") && other.gameObject == item)
+        // {
+        //     Variables.Object(item).Set("isMathing", false);
+        //     item.GetComponent<Rigidbody>().useGravity = true;
+        //     item.GetComponent<Collider>().isTrigger = false;
+        //     item.transform.localScale = originalScale;
+        //     item = null;
+        // }
+
         if (item != null && other.gameObject.CompareTag("Item") && other.gameObject == item)
         {
             Variables.Object(item).Set("isMathing", false);
@@ -105,5 +117,11 @@ public class Matcher : MonoBehaviour
             item.transform.localScale = originalScale;
             item = null;
         }
+    }
+
+    public void DoublePoints(float time)
+    {
+        doublePointsTime = time;
+        pointsForMatch *= 2;
     }
 }
